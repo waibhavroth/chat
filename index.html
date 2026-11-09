@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatter - Messaging App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    
+<div class="auth-box" id="authBox">
+    <h1>💬 Welcome to Chatter</h1>
+    <p>Connect with your friends!</p>
+
+    <input id="username" placeholder="Your name">
+    <input id="email" type="email" placeholder="Email address">
+    <input id="password" type="password" placeholder="Password">
+
+    <button onclick="signUp()">Create Account</button>
+    <button onclick="signIn()" class="login-btn">Login</button>
+
+    <p id="authMessage"></p>
+</div>
+
+
+<div class="app">
+
+    <aside class="sidebar">
+        <div class="logo">💬 Chatter</div>
+
+        <div class="profile">
+            <div class="avatar purple">Y</div>
+            <div>
+                <h3>Your Name</h3>
+                <p>Available</p>
+            </div>
+        </div>
+
+        <h4 class="section-title">MESSAGES</h4>
+
+        <input type="text" id="searchInput"
+               placeholder="🔍 Search friends...">
+
+        <div class="contacts" id="contacts">
+            <div class="contact active"
+                 onclick="selectChat('Sarah Johnson')">
+                <div class="avatar pink">S</div>
+                <div class="contact-info">
+                    <h4>Sarah Johnson</h4>
+                    <p>Hey! How are you?</p>
+                </div>
+                <span class="online"></span>
+            </div>
+
+            <div class="contact"
+                 onclick="selectChat('Alex Smith')">
+                <div class="avatar blue">A</div>
+                <div class="contact-info">
+                    <h4>Alex Smith</h4>
+                    <p>See you tomorrow!</p>
+                </div>
+            </div>
+
+            <div class="contact"
+                 onclick="selectChat('Emma Wilson')">
+                <div class="avatar orange">E</div>
+                <div class="contact-info">
+                    <h4>Emma Wilson</h4>
+                    <p>Thank you 😊</p>
+                </div>
+                <span class="online"></span>
+            </div>
+
+            <div class="contact"
+                 onclick="selectChat('David Brown')">
+                <div class="avatar green">D</div>
+                <div class="contact-info">
+                    <h4>David Brown</h4>
+                    <p>What's up?</p>
+                </div>
+            </div>
+
+            <div class="contact"
+                 onclick="selectChat('Olivia Martin')">
+                <div class="avatar yellow">O</div>
+                <div class="contact-info">
+                    <h4>Olivia Martin</h4>
+                    <p>Good morning!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            Made with ❤️ for friends
+        </div>
+    </aside>
+
+    <main class="chat-area">
+
+        <header class="chat-header">
+            <div class="avatar pink" id="chatAvatar">S</div>
+            <div>
+                <h3 id="chatName">Sarah Johnson</h3>
+                <p><span class="status-dot"></span> Active now</p>
+            </div>
+            <button class="more-btn">⋮</button>
+        </header>
+
+        <div class="messages" id="messages">
+            <div class="date-label">Today</div>
+
+            <div class="message received">
+                <p>Hey! How are you? 😊</p>
+                <span>10:30 AM</span>
+            </div>
+
+            <div class="message sent">
+                <p>I'm doing great! What about you?</p>
+                <span>10:32 AM</span>
+            </div>
+
+            <div class="message received">
+                <p>I'm good too! What are you doing today?</p>
+                <span>10:33 AM</span>
+            </div>
+
+            <div class="message sent">
+                <p>Just working on a new website! 🚀</p>
+                <span>10:35 AM</span>
+            </div>
+        </div>
+
+        <div class="typing" id="typing"></div>
+
+        <form class="message-input" id="messageForm">
+            <button type="button" class="emoji-btn"
+                    id="emojiBtn">😊</button>
+
+            <input type="text" id="messageInput"
+                   placeholder="Type your message..."
+                   autocomplete="off">
+
+            <button type="submit" class="send-btn">
+                ➤
+            </button>
+        </form>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>
